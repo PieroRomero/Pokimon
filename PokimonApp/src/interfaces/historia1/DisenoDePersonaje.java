@@ -214,6 +214,7 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
 //            System.out.println("El sexo seleccionado es " + jComboBox1.getSelectedItem().toString() );
             Presentacion p = new Presentacion();
             p.show();
+            this.dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -272,6 +273,6 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
