@@ -102,6 +102,11 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("NOMBRE:");
@@ -197,12 +202,27 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Bienvenido " + jTextField1.getText());
+            if (jComboBox1.getSelectedIndex() == 1) 
+            {
+                JOptionPane.showMessageDialog(null, "Bienvenido " + jTextField1.getText());
+            }
+            else if (jComboBox1.getSelectedIndex() == 2)
+            {
+                JOptionPane.showMessageDialog(null, "Bienvenida " + jTextField1.getText());
+            }
+            
 //            System.out.println("El sexo seleccionado es " + jComboBox1.getSelectedItem().toString() );
             Presentacion p = new Presentacion();
             p.show();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        if (jTextField1.getText().length() == 50)
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments
