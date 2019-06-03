@@ -57,7 +57,7 @@
               <Font name="Monospaced" size="14" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Gracias entrenador , no le decepcionare a usted ni al pueblo Santa Anita.&#xa;Cuidar&#xe9; bien de mis pokimones; lo prometo, soy el mejor de todos.&#xa;Traer&#xe9; trofeos , medallas y sobre todo siempre cuidar&#xe9; bien de los&#xa;pokimones.&#xa;&#xa;&#xa;Ya me encuentro emocionado de poder elegir a mi pokimon, &#xbf;podr&#xed;a, por&#xa;favor, mostrarme algunos para elegir? "/>
+            <Property name="text" type="java.lang.String" value="Gracias profesor, no le decepcionare a usted ni al pueblo Santa Anita.&#xa;Cuidar&#xe9; bien de mis pokimones; lo prometo, soy el mejor de todos.&#xa;Traer&#xe9; trofeos , medallas y sobre todo siempre cuidar&#xe9; bien de los&#xa;pokimones.&#xa;&#xa;&#xa;Ya me encuentro emocionado de poder elegir a mi pokimon, &#xbf;podr&#xed;a, por&#xa;favor, mostrarme algunos para elegir? "/>
           </Properties>
         </Component>
       </SubComponents>
