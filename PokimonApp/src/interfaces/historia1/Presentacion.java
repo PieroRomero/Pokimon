@@ -66,10 +66,10 @@ public class Presentacion extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Este es un texto que se cambiará despues");
+        jTextArea1.setText("Gracias entrenador , no le decepcionare a usted ni al pueblo Santa Anita\ncuidare bien de mis pokimones ,prometo soy el mejor de todos ; traer\ntrofeos , medallas y sobre todo , cuidar bien siemopre de los pokimones,\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon , le pombre un \nbuen nombre.");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 591, 252));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 252));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenador.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, -1, -1));
@@ -78,10 +78,10 @@ public class Presentacion extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("Este es un texto que se cambiará despues");
+        jTextArea2.setText("¡Muy bien! Ahora debemos de darte a elegir a unos de \nlos tres tipos de pokimones que tenemos aca; ya sea el de tipo agua, fuego\no hierba.\nSea cual sea el tipo de pokimon que elijas recuerda que ellos \nson mas que un pokimon , ellos son como un amigo para ti.\nSuerte y que empieze tu aventura....\n\n\n\n\nPD: Recuerda llamar si necesitas alguna ayuda o duda sobre los pokimones");
         jScrollPane2.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 630, 270));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 630, 240));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("CONTINUAR");

@@ -43,7 +43,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="370" width="591" height="252"/>
+          <AbsoluteConstraints x="40" y="380" width="600" height="252"/>
         </Constraint>
       </Constraints>
 
@@ -57,7 +57,7 @@
               <Font name="Monospaced" size="14" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Este es un texto que se cambiar&#xe1; despues"/>
+            <Property name="text" type="java.lang.String" value="Gracias entrenador , no le decepcionare a usted ni al pueblo Santa Anita&#xa;cuidare bien de mis pokimones ,prometo soy el mejor de todos ; traer&#xa;trofeos , medallas y sobre todo , cuidar bien siemopre de los pokimones,&#xa;&#xa;&#xa;Ya me encuentro emocionado de poder elegir a mi pokimon , le pombre un &#xa;buen nombre."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -80,7 +80,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="400" y="30" width="630" height="270"/>
+          <AbsoluteConstraints x="400" y="30" width="630" height="240"/>
         </Constraint>
       </Constraints>
 
@@ -94,7 +94,7 @@
               <Font name="Monospaced" size="14" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Este es un texto que se cambiar&#xe1; despues"/>
+            <Property name="text" type="java.lang.String" value="&#xa1;Muy bien! Ahora debemos de darte a elegir a unos de &#xa;los tres tipos de pokimones que tenemos aca; ya sea el de tipo agua, fuego&#xa;o hierba.&#xa;Sea cual sea el tipo de pokimon que elijas recuerda que ellos &#xa;son mas que un pokimon , ellos son como un amigo para ti.&#xa;Suerte y que empieze tu aventura....&#xa;&#xa;&#xa;&#xa;&#xa;PD: Recuerda llamar si necesitas alguna ayuda o duda sobre los pokimones"/>
           </Properties>
         </Component>
       </SubComponents>
