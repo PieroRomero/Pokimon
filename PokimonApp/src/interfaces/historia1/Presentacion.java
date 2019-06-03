@@ -5,7 +5,7 @@
  */
 package interfaces.historia1;
 
-import interfaces.historia2.ElecciondePokemon;
+import interfaces.historia2.ElecciondePokimon;
 
 /**
  *
@@ -103,7 +103,7 @@ public class Presentacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ElecciondePokemon next = new ElecciondePokemon();
+        ElecciondePokimon next = new ElecciondePokimon();
         next.show();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
