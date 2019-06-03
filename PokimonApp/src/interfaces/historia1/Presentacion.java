@@ -66,7 +66,7 @@ public class Presentacion extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Gracias profesor, no le decepcionare a usted ni al pueblo Santa Anita.\nCuidare bien de mis pokimones ,prometo soy el mejor de todos ; traer\ntrofeos , medallas y sobre todo , cuidar bien siemopre de los pokimones,\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon , le pombre un \nbuen nombre.");
+        jTextArea1.setText("Gracias profesor, no le decepcionare a usted ni al pueblo Santa Anita.\nCuidaré bien de mis pokimones; lo prometo, soy el mejor de todos.\nTraeré trofeos , medallas y sobre todo siempre cuidaré bien de los\npokimones.\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon, ¿podría, por\nfavor, mostrarme algunos para elegir? ");
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 200));
