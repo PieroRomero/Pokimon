@@ -66,10 +66,10 @@ public class Presentacion extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Gracias entrenador , no le decepcionare a usted ni al pueblo Santa Anita\ncuidare bien de mis pokimones ,prometo soy el mejor de todos ; traer\ntrofeos , medallas y sobre todo , cuidar bien siemopre de los pokimones,\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon , le pombre un \nbuen nombre.");
+        jTextArea1.setText("Gracias entrenador , no le decepcionare a usted ni al pueblo Santa Anita.\nCuidaré bien de mis pokimones; lo prometo, soy el mejor de todos.\nTraeré trofeos , medallas y sobre todo siempre cuidaré bien de los\npokimones.\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon, ¿podría, por\nfavor, mostrarme algunos para elegir? ");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 252));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 200));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenador.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, -1, -1));
@@ -90,7 +90,7 @@ public class Presentacion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 700, 198, 47));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 680, 198, 47));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenadora.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, -1, -1));
