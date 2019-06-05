@@ -2,10 +2,10 @@ package entidades;
 
 public class Entrenador 
 {
-    String nombre;
-    String sexo;
-    Pokimon pokimon;
-    int posiones;
+    private String nombre;
+    private String sexo;
+    private Pokimon pokimon;
+    private int posiones;
 
     public Entrenador()
     {
