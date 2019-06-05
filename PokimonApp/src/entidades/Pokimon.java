@@ -1,5 +1,6 @@
 package entidades;
 
+
 public class Pokimon
 {
     private String especie;
@@ -8,8 +9,7 @@ public class Pokimon
     private int vidaMax;
     private int salud;
     private int nivel;
-    private int atk;
-    
+    private int atk;  
 
     public Pokimon(String species, String type) 
     {
@@ -90,5 +90,28 @@ public class Pokimon
         this.atk = atk;
     }
     
+    public int randomConRango(int min, int max)
+    {
+       int range = (max - min) + 1;     
+       return (int)(Math.random() * range) + min;
+    }
     
+    public void setAtk()
+    {
+        setAtk((int) randomConRango(5, 10));
+    }
+    
+    public void Atacar(Pokimon oponente)
+    {
+        int prob = randomConRango(1, 100);
+        if (prob <= 20)
+        {
+            setAtk();
+            setAtk(atk *2);
+        }
+        else
+        {
+            setAtk();
+        }
+    }
 }
