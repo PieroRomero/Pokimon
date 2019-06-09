@@ -39,6 +39,11 @@ public class PokimonCustom extends javax.swing.JFrame
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, 190));
 
         jButton1.setText("CONTINUAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, -1, -1));
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -60,6 +65,12 @@ public class PokimonCustom extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            PresentacionDelRival p = new PresentacionDelRival();
+            p.show();
+            this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
