@@ -6,7 +6,7 @@ import interfaces.historia2.ElecciondePokimon;
 
 public class Presentacion extends javax.swing.JFrame {
 
-    public Entrenador tu = new Entrenador();
+    Entrenador tu = new Entrenador();
     String sexo = null;
     String nombre = null;
     
