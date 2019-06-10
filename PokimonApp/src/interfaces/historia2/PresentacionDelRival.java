@@ -66,7 +66,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenador.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 292, -1, 230));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/Fondo.jpg"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/FONDO2.jpg"))); // NOI18N
         Fondo.setText("FONDO");
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 550));
 
