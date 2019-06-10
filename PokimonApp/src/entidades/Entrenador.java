@@ -1,5 +1,8 @@
 package entidades;
 
+import entidades.Pokimon;
+import javax.swing.JOptionPane;
+
 public class Entrenador 
 {
     public static String nombre;
@@ -54,5 +57,26 @@ public class Entrenador
 
     public void setPosiones(int posiones) {
         this.posiones = posiones;
-    }  
+    }
+    
+    public void LanzarAtaque(Pokimon pokimon, Pokimon adv)
+    {
+        pokimon.Atacar(pokimon, adv);
+    }
+    
+    public void UsarPosion()
+    {
+        if (posiones > 0)
+        {
+            pokimon.setSalud(pokimon.getSalud() + 15);
+            posiones = posiones - 1;
+            
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Ya no le quedan posiones");
+        }
+    }
+    
+    
 }

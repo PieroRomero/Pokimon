@@ -181,4 +181,6 @@ public class Pokimon
         
         adv.salud = adv.salud - damage;
     }
+    
+    
 }
