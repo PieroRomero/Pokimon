@@ -10,6 +10,7 @@ public class Pokimon
     private int salud;
     private int nivel;
     private int atk;  
+    private String imagen;
 
     public Pokimon(String species, String type) 
     {

@@ -6,12 +6,24 @@ public class Entrenador
     private String sexo;
     private Pokimon pokimon;
     private int posiones;
+    private String imagen; 
 
     public Entrenador()
     {
+        nombre = "";
         posiones = 3;
+        
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }
