@@ -78,5 +78,8 @@ public class Entrenador
         }
     }
     
-    
+    public void Rendirse()
+    {
+        JOptionPane.showMessageDialog(null, "Te has rendido. \n Ya no serás un maestro Pokimon");
+    }
 }
