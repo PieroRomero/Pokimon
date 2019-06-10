@@ -47,7 +47,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jTextField1.setText("Bien ahora que tienes todo listo , te presentare a tu primer rival Gary , ¡Que gane el mejor!");
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 560, 30));
 
-        jTextField2.setText("Hola yo soy Gary ,espero que sepas jugar bien ¡NOBATO!");
+        jTextField2.setText("Hola yo soy Gary ,espero que sepas jugar bien ¡NOVATO!");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 290, 30));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 300, 240));
 
