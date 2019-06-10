@@ -62,7 +62,7 @@ public class PokimonCustom extends javax.swing.JFrame
 
         jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/Fondo.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 560));
 
         pack();
