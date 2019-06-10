@@ -66,7 +66,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
         jLabel8.setText("ZQUIRTLE");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("CHARIZARD");
+        jLabel9.setText("SHARMANDER");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("BULBAZAUR");

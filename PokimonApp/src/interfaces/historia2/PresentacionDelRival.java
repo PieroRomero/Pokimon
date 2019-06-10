@@ -33,7 +33,6 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,9 +49,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
 
         jTextField2.setText("Hola yo soy Gary ,espero que sepas jugar bien ¡NOBATO!");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 290, 30));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenadora.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 300, 240));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 300, 240));
 
         jTextField3.setText("JAAAA¡ lo mismo digo Gary , yo vengo a demostrar que soy imparable");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -61,9 +58,6 @@ public class PresentacionDelRival extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 350, 30));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenador.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 292, -1, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,7 +105,6 @@ public class PresentacionDelRival extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

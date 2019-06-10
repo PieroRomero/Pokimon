@@ -11,6 +11,7 @@ public class Pokimon
     private int nivel;
     private int atk;  
     private String imagen;
+    
 
     public Pokimon(String species, String type) 
     {
@@ -97,22 +98,87 @@ public class Pokimon
        return (int)(Math.random() * range) + min;
     }
     
-    public void setAtk()
+    public String VentajaElemental(Pokimon tu, Pokimon adv)
     {
-        setAtk((int) randomConRango(5, 10));
+        String res = null;
+        if (tu.tipo == "agua")
+        {
+            if (adv.tipo == "agua")
+            {
+                res = "empate";
+            }
+            else if (adv.tipo == "hierba")
+            {
+                res = "pierde";
+            }
+            else if (adv.tipo == "fuego")
+            {
+                res = "gana"; 
+            }
+        }
+        
+        else if (tu.tipo == "fuego")
+        {
+            if (adv.tipo == "fuego")
+            {
+                res = "empate";
+            }
+            else if (adv.tipo == "agua")
+            {
+                res = "pierde";
+            }
+            else if (adv.tipo == "hierba")
+            {
+               res = "gana";
+            }
+        }
+        
+        else if (tu.tipo == "hierba")
+        {
+            if (adv.tipo == "hierba")
+            {
+                res = "empate";
+            }
+            else if (adv.tipo == "fuego")
+            {
+                res = "pierde";
+            }
+            else if (adv.tipo == "agua")
+            {
+                res = "gana";   
+            }
+        }
+        
+    return res;     
+    }
+       
+    public void setAtk(int min, int max)
+    {
+        setAtk((int) randomConRango(min, max));
     }
     
-    public void Atacar(Pokimon oponente)
+    public void Atacar(Pokimon tu ,Pokimon adv)
     {
+        String ventaja = null;
+        int damage = 0;
+        ventaja = VentajaElemental(tu, adv);
+        if(ventaja == "gana")
+        {
+            setAtk(7, 12);
+            damage = getAtk();
+        }
+        else 
+        {
+            setAtk(5,10);
+            damage = getAtk();
+        }
+        
         int prob = randomConRango(1, 100);
         if (prob <= 20)
         {
-            setAtk();
-            setAtk(atk *2);
+            damage = getAtk() * 3;
         }
-        else
-        {
-            setAtk();
-        }
+        
+        adv.salud = adv.salud - damage;
     }
 }
