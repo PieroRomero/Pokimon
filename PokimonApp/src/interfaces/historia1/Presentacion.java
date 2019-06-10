@@ -1,45 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfaces.historia1;
+
+import entidades.*;
 
 import interfaces.historia2.ElecciondePokimon;
 
-/**
- *
- * @author alumno
- */
-
 public class Presentacion extends javax.swing.JFrame {
 
-    int sexo = 0;
+    Entrenador tu = new Entrenador();
+    String sexo = null;
     String nombre = null;
     
     public Presentacion() {
         initComponents();
-        sexo = DisenoDePersonaje.jComboBox1.getSelectedIndex();
+        sexo = tu.getSexo();
         ImagenEntrenador();
-        nombre = DisenoDePersonaje.jTextField1.getText();
+        nombre = tu.getNombre();
         jLabel4.setText(nombre);
     }
 
     public void ImagenEntrenador()
     {
         
-        if (sexo == 1)
+        if (sexo == "man")
         {
-            jLabel2.setText("");
-            jLabel2.setVisible(true);
-            jLabel3.setVisible(false);
+            tu.setImagen("/imagenes/historia1/entrenador.png");
         }
-        else if (sexo == 2)
+        else if (sexo == "woman")
         {
-            jLabel2.setText("");
-            jLabel2.setVisible(false);
-            jLabel3.setVisible(true);
+            tu.setImagen("/imagenes/historia1/entrenadora.png");
+
         }
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(tu.getImagen())));
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -49,12 +41,11 @@ public class Presentacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,9 +61,6 @@ public class Presentacion extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 200));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenador.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, -1, -1));
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -92,12 +80,10 @@ public class Presentacion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 680, 198, 47));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/entrenadora.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 640, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 620, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, 240, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,9 +132,8 @@ public class Presentacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

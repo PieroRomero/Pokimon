@@ -6,7 +6,8 @@ public class PokimonCustom extends javax.swing.JFrame
     /**
      * Creates new form EnterRival
      */
-    public PokimonCustom() {
+    public PokimonCustom() 
+    {
         initComponents();
     }
 
@@ -26,9 +27,9 @@ public class PokimonCustom extends javax.swing.JFrame
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 260, -1));
 
@@ -59,11 +60,6 @@ public class PokimonCustom extends javax.swing.JFrame
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 280, 220));
-
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/fondo3.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,7 +112,6 @@ public class PokimonCustom extends javax.swing.JFrame
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

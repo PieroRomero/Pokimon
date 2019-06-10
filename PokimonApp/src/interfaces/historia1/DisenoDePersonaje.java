@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package interfaces.historia1;
+
+import entidades.*;
 
 import javax.swing.JOptionPane;
 
@@ -200,6 +198,8 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Entrenador tu = new Entrenador();
+        tu.setNombre(jTextField1.getText());
         
         if (jTextField1.getText().length() == 0 || jComboBox1.getSelectedIndex() == 0) 
         {
@@ -209,17 +209,21 @@ public class DisenoDePersonaje extends javax.swing.JFrame {
         {
             if (jComboBox1.getSelectedIndex() == 1) 
             {
-                JOptionPane.showMessageDialog(null, "Bienvenido " + jTextField1.getText());
+                tu.setSexo("man");
+                JOptionPane.showMessageDialog(null, "Bienvenido " + tu.getNombre());
             }
             else if (jComboBox1.getSelectedIndex() == 2)
             {
-                JOptionPane.showMessageDialog(null, "Bienvenida " + jTextField1.getText());
+                tu.setSexo("woman");
+                JOptionPane.showMessageDialog(null, "Bienvenida " + tu.getNombre());
             }
             
-//            System.out.println("El sexo seleccionado es " + jComboBox1.getSelectedItem().toString() );
-            Presentacion p = new Presentacion();
-            p.show();
-            this.dispose();
+
+        Presentacion p = new Presentacion();
+        p.show();
+        this.dispose();
+            
+        
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
