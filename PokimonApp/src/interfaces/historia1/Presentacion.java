@@ -6,7 +6,7 @@ import interfaces.historia2.ElecciondePokimon;
 
 public class Presentacion extends javax.swing.JFrame {
 
-    Entrenador tu = new Entrenador();
+    public Entrenador tu = new Entrenador();
     String sexo = null;
     String nombre = null;
     
@@ -89,9 +89,9 @@ public class Presentacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ElecciondePokimon next = new ElecciondePokimon();
-        next.show();
-        this.dispose();
+        ElecciondePokimon next = new ElecciondePokimon(this);
+            next.show();
+            this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
