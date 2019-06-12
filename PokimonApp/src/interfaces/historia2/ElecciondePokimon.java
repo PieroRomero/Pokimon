@@ -7,6 +7,7 @@ import interfaces.historia1.Presentacion;
 public class ElecciondePokimon extends javax.swing.JFrame {
        
     private Presentacion vent;
+    Entrenador tu = new Entrenador();
                   
     public ElecciondePokimon() 
     {
@@ -23,6 +24,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Atributos = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -75,6 +77,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
             }
         });
 
+        Atributos.add(ElegirAgua);
         ElegirAgua.setText("Elegir");
         ElegirAgua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,9 +85,21 @@ public class ElecciondePokimon extends javax.swing.JFrame {
             }
         });
 
+        Atributos.add(ElegirFuego);
         ElegirFuego.setText("Elegir");
+        ElegirFuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ElegirFuegoActionPerformed(evt);
+            }
+        });
 
+        Atributos.add(ElegirHierba);
         ElegirHierba.setText("Elegir");
+        ElegirHierba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ElegirHierbaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,23 +191,37 @@ public class ElecciondePokimon extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ElegirAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirAguaActionPerformed
-        
-        
-        ElegirFuego.setSelected(false);
-        ElegirHierba.setSelected(false);
+        Pokimon inicial = new Pokimon("Zquirtle", "Agua");
+        tu.setPokimon(inicial);
+        System.out.println(tu.getPokimon().getTipo());
     }//GEN-LAST:event_ElegirAguaActionPerformed
 
+    private void ElegirFuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirFuegoActionPerformed
+        Pokimon inicial = new Pokimon("Sharmander", "Fuego");
+        tu.setPokimon(inicial);
+        System.out.println(tu.getPokimon().getTipo());
+    }//GEN-LAST:event_ElegirFuegoActionPerformed
+
+    private void ElegirHierbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirHierbaActionPerformed
+        Pokimon inicial = new Pokimon("Bulbazaur", "Hierba");
+        tu.setPokimon(inicial);
+        System.out.println(tu.getPokimon().getTipo());
+    }//GEN-LAST:event_ElegirHierbaActionPerformed
+
    
-    public static void main(String args[]) {
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+    public static void main(String args[]) 
+    {
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            public void run() 
+            {
                 new ElecciondePokimon().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Atributos;
     private javax.swing.JRadioButton ElegirAgua;
     private javax.swing.JRadioButton ElegirFuego;
     private javax.swing.JRadioButton ElegirHierba;
