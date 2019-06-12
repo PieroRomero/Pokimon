@@ -1,7 +1,7 @@
 package interfaces.historia1;
 
 import entidades.*;
-
+import interfaces.historia1.*;
 import interfaces.historia2.ElecciondePokimon;
 
 public class Presentacion extends javax.swing.JFrame {
@@ -10,12 +10,14 @@ public class Presentacion extends javax.swing.JFrame {
     String sexo = null;
     String nombre = null;
     
-    public Presentacion() {
+    public Presentacion() 
+    {
         initComponents();
+        tu.setNombre(DisenoDePersonaje.jTextField1.getText());
         sexo = tu.getSexo();
         ImagenEntrenador();
         nombre = tu.getNombre();
-        jLabel4.setText(nombre);
+        jLabel6.setText(nombre);
     }
 
     public void ImagenEntrenador()
@@ -44,8 +46,9 @@ public class Presentacion extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,7 +64,7 @@ public class Presentacion extends javax.swing.JFrame {
         jTextArea1.setText("Gracias profesor, no le decepcionare a usted ni al pueblo Santa Anita.\nCuidaré bien de mis pokimones; lo prometo, soy el mejor de todos.\nTraeré trofeos , medallas y sobre todo siempre cuidaré bien de los\npokimones.\n\n\nYa me encuentro emocionado de poder elegir a mi pokimon, ¿podría, por\nfavor, mostrarme algunos para elegir? ");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 600, 200));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 600, 200));
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
@@ -81,10 +84,14 @@ public class Presentacion extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 680, 198, 47));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 620, -1, -1));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, 240, 210));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel7.setText(" Profesor Ouk");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 240, 210));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel6.setText("jLabel4");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,8 +140,9 @@ public class Presentacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

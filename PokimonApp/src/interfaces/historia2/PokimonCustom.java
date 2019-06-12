@@ -11,8 +11,6 @@ public class PokimonCustom extends javax.swing.JFrame
         initComponents();
     }
     
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -34,6 +32,11 @@ public class PokimonCustom extends javax.swing.JFrame
                 pokinameActionPerformed(evt);
             }
         });
+        pokiname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pokinameKeyTyped(evt);
+            }
+        });
         getContentPane().add(pokiname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 260, -1));
 
         jButton1.setText("CONTINUAR");
@@ -44,15 +47,16 @@ public class PokimonCustom extends javax.swing.JFrame
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 0));
         jLabel1.setText("NOMBRA A TU POKIMON");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Puede no elegir un nombre.\nEn ese caso, se le asignará el nombre de la\nespecie");
@@ -77,11 +81,20 @@ public class PokimonCustom extends javax.swing.JFrame
             System.out.println(ep.tu.getPokimon().getNombre());
             p.show();
             this.dispose();
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     private void pokinameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokinameActionPerformed
         
     }//GEN-LAST:event_pokinameActionPerformed
+
+    private void pokinameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pokinameKeyTyped
+        if (pokiname.getText().length() == 50)
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_pokinameKeyTyped
 
     /**
      * @param args the command line arguments
