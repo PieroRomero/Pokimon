@@ -1,26 +1,23 @@
 package interfaces.historia2;
 
-public class PokimonCustom extends javax.swing.JFrame 
-{
+import entidades.*;
 
-    private ElecciondePokimon f;
+public class PokimonCustom extends javax.swing.JFrame 
+{       
+    ElecciondePokimon ep = new ElecciondePokimon();
     
     public PokimonCustom() 
     {
         initComponents();
     }
     
-    public PokimonCustom(ElecciondePokimon f) 
-    {
-        this.f = f;
-        initComponents();
-    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
+        pokiname = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -31,7 +28,13 @@ public class PokimonCustom extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 260, -1));
+
+        pokiname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pokinameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pokiname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 260, -1));
 
         jButton1.setText("CONTINUAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,8 +59,6 @@ public class PokimonCustom extends javax.swing.JFrame
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 370, 110));
-
-        jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 280, 220));
 
         pack();
@@ -65,9 +66,22 @@ public class PokimonCustom extends javax.swing.JFrame
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             PresentacionDelRival p = new PresentacionDelRival();
+            if (pokiname.getText() == null)
+            {
+                ep.tu.getPokimon().setNombre(ep.tu.getPokimon().getEspecie());
+            }
+            else
+            {
+                ep.tu.getPokimon().setNombre(pokiname.getText());
+            }
+            System.out.println(ep.tu.getPokimon().getNombre());
             p.show();
             this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pokinameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pokinameActionPerformed
+        
+    }//GEN-LAST:event_pokinameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,10 +124,10 @@ public class PokimonCustom extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField pokiname;
     // End of variables declaration//GEN-END:variables
 }

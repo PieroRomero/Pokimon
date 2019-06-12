@@ -4,20 +4,39 @@ package interfaces.historia2;
 import entidades.*;
 import interfaces.historia1.Presentacion;
 
+
 public class ElecciondePokimon extends javax.swing.JFrame {
        
     private Presentacion vent;
+    public static String tipoPokimon = null;
+   
     Entrenador tu = new Entrenador();
                   
     public ElecciondePokimon() 
     {
         initComponents();
+         
     }
     
-    public ElecciondePokimon(Presentacion vent) 
+    public void ImagenPokimon(String pok)
     {
-        this.vent = vent;
-        initComponents();
+        String imagen = null;
+                
+        if (pok == "Agua")
+        {
+           imagen = "/imagenes/historia2/AGUA.png";
+           
+        }
+        else if (pok == "Fuego")
+        {
+            imagen = "/imagenes/historia2/FUEGO.jpg";
+        }
+        else if (pok == "Hierba")
+        {
+            imagen = "/imagenes/historia2/HIERBA.jpg";
+        }
+        tu.pokimon.setImagen(imagen);
+        PokimonCustom.jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(tu.pokimon.getImagen())));
     }
 
     @SuppressWarnings("unchecked")
@@ -41,6 +60,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
         ElegirHierba = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/AGUA.png"))); // NOI18N
 
@@ -185,26 +205,30 @@ public class ElecciondePokimon extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        PokimonCustom p = new PokimonCustom(this);
+        PokimonCustom p = new PokimonCustom();
             p.show();
+            ImagenPokimon(tu.getPokimon().getTipo());
             this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void ElegirAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirAguaActionPerformed
         Pokimon inicial = new Pokimon("Zquirtle", "Agua");
         tu.setPokimon(inicial);
+        tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
     }//GEN-LAST:event_ElegirAguaActionPerformed
 
     private void ElegirFuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirFuegoActionPerformed
         Pokimon inicial = new Pokimon("Sharmander", "Fuego");
         tu.setPokimon(inicial);
+        tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
     }//GEN-LAST:event_ElegirFuegoActionPerformed
 
     private void ElegirHierbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirHierbaActionPerformed
         Pokimon inicial = new Pokimon("Bulbazaur", "Hierba");
         tu.setPokimon(inicial);
+        tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
     }//GEN-LAST:event_ElegirHierbaActionPerformed
 

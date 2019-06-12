@@ -48,6 +48,7 @@ public class Presentacion extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia1/miniouk.jpg"))); // NOI18N
@@ -89,7 +90,7 @@ public class Presentacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ElecciondePokimon next = new ElecciondePokimon(this);
+        ElecciondePokimon next = new ElecciondePokimon();
             next.show();
             this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

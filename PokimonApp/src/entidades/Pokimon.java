@@ -3,14 +3,14 @@ package entidades;
 
 public class Pokimon
 {
-    private String especie;
-    private String nombre;
-    private String tipo;
-    private int vidaMax;
-    private int salud;
-    private int nivel;
-    private int atk;  
-    private String imagen;
+    public static String especie;
+    public static String nombre;
+    public static String tipo;
+    public static int vidaMax;
+    public static int salud;
+    public static int nivel;
+    public static int atk;  
+    public static String imagen;
     
 
     public Pokimon(String species, String type) 
@@ -22,6 +22,14 @@ public class Pokimon
         salud = vidaMax;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
     public String getEspecie() 
     {
         return especie;
