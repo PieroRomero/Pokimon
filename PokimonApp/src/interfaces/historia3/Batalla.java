@@ -4,7 +4,10 @@ import interfaces.historia2.*;
 
 public class Batalla extends javax.swing.JFrame 
 {
-
+    String nuestroTipo = null;
+    String rivalImagen = null;
+    
+    
     public Batalla() 
     {
         initComponents();
@@ -172,7 +175,7 @@ public class Batalla extends javax.swing.JFrame
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 110, 30));
 
         jLabelRivalPokimonImagen.setText("jLabel3");
-        getContentPane().add(jLabelRivalPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 200, 180));
+        getContentPane().add(jLabelRivalPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 230, 190));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia3/CAMPODEBATALLA.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -199,6 +202,23 @@ public class Batalla extends javax.swing.JFrame
     public void Cargando()
     {
         jLabelNuestroPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(ElecciondePokimon.imagen)));
+        nuestroTipo = ElecciondePokimon.tipoPokimon;
+        System.out.println(nuestroTipo);
+        if (nuestroTipo == "Fuego")
+        {
+            rivalImagen = "/imagenes/historia2/AGUA.png";
+        }
+        else if (nuestroTipo == "Hierba")
+        {
+            rivalImagen = "/imagenes/historia2/FUEGO.jpg";
+        }
+        else if (nuestroTipo == "Agua")
+        {
+            rivalImagen = "/imagenes/historia2/HIERBA.jpg";
+        }
+        System.out.println(rivalImagen);
+        jLabelRivalPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(rivalImagen)));
+        
     }
     
     public static void main(String args[]) {
