@@ -2,33 +2,35 @@
 package interfaces.historia2;
 
 import entidades.*;
+import interfaces.historia1.*;
+import interfaces.historia3.Batalla;
 
 public class PresentacionDelRival extends javax.swing.JFrame {
     
     Entrenador tu = new Entrenador();
     String sexo = null;
-    String nombre = null;
+    String nombre;
     String nombreRival = "Garu";
         
     Entrenador rival = new Entrenador();
     
     public PresentacionDelRival() {
         initComponents();
-        
-        rival.setNombre(nombreRival);
-        rival.setSexo("man");
-        rival.setPosiones(3);
-        
-        sexo = tu.getSexo();
         ImagenEntrenador();
-        nombre = tu.getNombre();
+        
+        nombre = DisenoDePersonaje.jTextField1.getText();
+        sexo = tu.getSexo();
+        jNombreEntrenador.setText(nombre);
+        System.out.println(nombre);
+
+        jNombreRival.setText(nombreRival);
     }
 
 
     
     public void ImagenEntrenador()
     {
-        
+        sexo = tu.getSexo();
         if (sexo == "man")
         {
             tu.setImagen("/imagenes/historia1/entrenador.png");
@@ -54,8 +56,8 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jNombreRival = new javax.swing.JLabel();
+        jNombreEntrenador = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,11 +96,11 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jLabel3.setText("Profesor Ouk");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, -1, -1));
 
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
+        jNombreRival.setText("jLabel4");
+        getContentPane().add(jNombreRival, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
 
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 570, -1, -1));
+        jNombreEntrenador.setText("NombreEntrenador");
+        getContentPane().add(jNombreEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 600, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("CONTINUAR");
@@ -107,7 +109,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 610, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 630, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,7 +119,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ElecciondePokimon next = new ElecciondePokimon();
+        Batalla next = new Batalla();
         next.show();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -140,9 +142,9 @@ public class PresentacionDelRival extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelEntrenador;
+    private javax.swing.JLabel jNombreEntrenador;
+    private javax.swing.JLabel jNombreRival;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField2;
