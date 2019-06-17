@@ -1,97 +1,63 @@
 package entidades;
 
-import javax.swing.JOptionPane;
-
-
-public class Pokimon
+public class PokemonBatalla 
 {
-    public static String especie;
-    public static String nombre;
-    public static String tipo;
-    public static int vidaMax;
-    public static int salud;
-    public static int nivel;
-    public static int atk;  
-    public static String imagen;
+    private String especie;
+    private String tipo;
+    private int vidaMax;
+    private int salud;
+    private int nivel;
+    private int atk; 
+
+    public PokemonBatalla(String especie, String tipo, int vidaMax, int salud, int nivel) {
+        this.especie = especie;
+        this.tipo = tipo;
+        this.vidaMax = vidaMax;
+        this.salud = salud;
+        this.nivel = nivel;
     
-
-    public Pokimon(String species, String type) 
-    {
-        especie = species;
-        tipo = type;
-        nivel = 1;
-        vidaMax = 40 + nivel*5;
-        salud = vidaMax;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-    
-    public String getEspecie() 
-    {
+    public String getEspecie() {
         return especie;
     }
 
-    public void setEspecie(String especie) 
-    {
+    public void setEspecie(String especie) {
         this.especie = especie;
     }
 
-    public String getNombre() 
-    {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) 
-    {
-        this.nombre = nombre;
-    }
-
-    public String getTipo() 
-    {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) 
-    {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public int getVidaMax() 
-    {
+    public int getVidaMax() {
         return vidaMax;
     }
 
-    public void setVidaMax(int vidaMax)
-    {
+    public void setVidaMax(int vidaMax) {
         this.vidaMax = vidaMax;
     }
 
-    public int getSalud() 
-    {
+    public int getSalud() {
         return salud;
     }
 
-    public void setSalud(int salud) 
-    {
+    public void setSalud(int salud) {
         this.salud = salud;
     }
 
-    public int getNivel()
-    {
+    public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(int nivel)
-    {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-
+    
     public int getAtk()
     {
         return atk;
@@ -101,14 +67,14 @@ public class Pokimon
     {
         this.atk = atk;
     }
-    
+
     public int randomConRango(int min, int max)
     {
        int range = (max - min) + 1;     
        return (int)(Math.random() * range) + min;
     }
     
-    public String VentajaElemental(Pokimon tu, Pokimon adv)
+    public String VentajaElemental(PokemonBatalla tu, PokemonBatalla adv)
     {
         String res = null;
         if (tu.tipo == "agua")
@@ -167,39 +133,39 @@ public class Pokimon
         setAtk((int) randomConRango(min, max));
     }
     
-    public void Atacar(Pokimon tu ,Pokimon adv)
+    public void Atacar(PokemonBatalla tu ,PokemonBatalla adv)
     {
         String ventaja = null;
-        if (adv.getSalud() > 0)
+        int damage = 0;
+        ventaja = VentajaElemental(tu, adv);
+        if(ventaja == "gana")
         {
-            int damage = 0;
-            ventaja = VentajaElemental(tu, adv);
-            if(ventaja == "gana")
-            {
-                setAtk(7, 12);
-                damage = getAtk();
-            }
-            else 
-            {
-                setAtk(5,10);
-                damage = getAtk();
-            }
-
-            int prob = randomConRango(1, 100);
-            if (prob <= 20)
-            {
-                damage = getAtk() * 3;
-            }
-
-            adv.salud = adv.salud - damage;
-            
+            setAtk(7, 12);
+            damage = getAtk();
         }
-        else
+        else 
         {
-            JOptionPane.showMessageDialog(null, "La batalla ha terminado");
+            setAtk(5,10);
+            damage = getAtk();
         }
-
+        
+        int prob = randomConRango(1, 100);
+        if (prob <= 20)
+        {
+            damage = getAtk() * 3;
+        }
+        
+        adv.salud = adv.salud - damage;
+        adv.setSalud(adv.salud);
     }
     
-    
+    public void Curar()
+    {
+        int cont = 3;
+        if (cont > 0){
+            setSalud(getSalud() + 15);
+        }
+        cont = cont - 1;  
+    }
+
 }

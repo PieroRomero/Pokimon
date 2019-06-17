@@ -1,24 +1,33 @@
 package interfaces.historia3;
 
-import entidades.Pokimon;
+import entidades.*;
 import interfaces.historia1.*;
 import interfaces.historia2.*;
+import javax.swing.JOptionPane;
 
 public class Batalla extends javax.swing.JFrame 
 {
     String nuestroTipo = null;
     String rivalImagen = null;
     String nuestroEspecie = null;
-    int vidaMaximaNuestra = 0;
-    int vidaMaximaRival = 0;
-    int vidaActualNuestra = 0;
-    int vidaActualRival = 0;
+    int vidaMaximaNuestra = 45;
+    int vidaMaximaRival = 45;
+    int vidaActualNuestra = 45;
+    int vidaActualRival = 45;
     String miFoto = null;
+    String rivalEspecie = null;
+    String rivalTipo = null;
+    
+    Entrenador adversario = new Entrenador();
+    
+    PokemonBatalla nuestro = new PokemonBatalla(nuestroEspecie, nuestroTipo, vidaMaximaNuestra, vidaActualNuestra, 5);
+    PokemonBatalla rival = new PokemonBatalla(rivalEspecie, rivalTipo, vidaMaximaRival, vidaActualRival, 5);
     
     public Batalla() 
     {
         initComponents();
         Cargando();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -61,7 +70,7 @@ public class Batalla extends javax.swing.JFrame
         jLabel3.setText("Lv 5");
 
         jRivalHealth.setForeground(new java.awt.Color(102, 255, 102));
-        jRivalHealth.setValue(100);
+        jRivalHealth.setMaximum(45);
 
         jRivalVidaAct.setText("jLabel7");
 
@@ -117,7 +126,8 @@ public class Batalla extends javax.swing.JFrame
         jLabel2.setText("Lv 5");
 
         jOurHealth.setForeground(new java.awt.Color(102, 255, 102));
-        jOurHealth.setValue(100);
+        jOurHealth.setMaximum(45);
+        jOurHealth.setToolTipText("");
 
         jNuestroVidaAct.setText("jLabel4");
 
@@ -169,13 +179,23 @@ public class Batalla extends javax.swing.JFrame
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 290, 130));
 
         jButton1.setText("Atacar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 70, 30));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 90, 30));
 
         jButton2.setText("Usar Posión");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 90, 30));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 100, 30));
 
         jButton3.setText("Rendirse");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 80, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 100, 30));
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -206,6 +226,22 @@ public class Batalla extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (rival.getSalud() <= 0)
+        {
+            this.setEnabled(false);
+        }
+        else
+        {
+            LanzarAtaque();
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        UsarPosion();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     public void Cargando()
     {
         jLabelNuestroPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(ElecciondePokimon.imagen)));
@@ -230,22 +266,93 @@ public class Batalla extends javax.swing.JFrame
         {
             rivalImagen = "/imagenes/historia2/AGUA.png";
             jLabelRivalPokimonNombre.setText("Zquirtle");
+            rivalEspecie = "Zquirtle";
+            rivalTipo = "Agua";
         }
         else if (nuestroTipo == "Hierba")
         {
             rivalImagen = "/imagenes/historia2/FUEGO.jpg";
             jLabelRivalPokimonNombre.setText("Sharmander");
+            rivalEspecie = "Sharmander";
+            rivalTipo = "Fuego";
         }
         else if (nuestroTipo == "Agua")
         {
             rivalImagen = "/imagenes/historia2/HIERBA.jpg";
             jLabelRivalPokimonNombre.setText("Bulbazaur");
+            rivalEspecie = "Bulbazaur";
+            rivalTipo = "Hierba";
         }
         System.out.println(rivalImagen);
         jLabelRivalPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(rivalImagen)));
         
         jLabelNuestroPokimonNombre.setText(PokimonCustom.pokimonName);
     }
+    
+        public void LanzarAtaque()
+        {
+
+            nuestro.Atacar(nuestro, rival);
+            System.out.println(rival.getSalud());;
+            jRivalHealth.setValue(rival.getSalud());
+
+            if (rival.getSalud() < 0)
+            {
+                jRivalVidaAct.setText("" + 0);
+                JOptionPane.showMessageDialog(null, "El oponente ya no puede continuar. \n Usted gana");
+            }
+            else
+            {
+                jRivalVidaAct.setText("" + rival.getSalud());
+            }
+            RespuestaEnemiga();
+            System.out.println(nuestro.getSalud());;
+            jNuestroVidaAct.setText("");
+            jOurHealth.setValue(nuestro.getSalud());
+        }
+        
+        public void UsarPosion()
+        {
+            nuestro.Curar();
+            jNuestroVidaAct.setText("");
+            jOurHealth.setValue(nuestro.getSalud());
+            RespuestaEnemiga();
+        }
+        
+        public int randomConRango(int min, int max)
+        {
+           int range = (max - min) + 1;     
+           return (int)(Math.random() * range) + min;
+        }    
+        
+        public void RespuestaEnemiga()
+        {
+            int ran = randomConRango(1, 4);
+            switch(ran) 
+            {
+                case 1:
+                    rival.Curar();
+                    
+                    break;
+                case 2:
+                    rival.Atacar(rival, nuestro);
+                    break;
+                case 3:
+                    rival.Atacar(rival, nuestro);
+                    break;    
+                case 4:
+                    rival.Atacar(rival, nuestro);
+                    break;
+                default: 
+                    System.out.println("ERROR");
+                    
+            }
+            
+            jRivalVidaAct.setText("");
+            jRivalHealth.setValue(rival.getSalud());          
+        }
+        
+        
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
