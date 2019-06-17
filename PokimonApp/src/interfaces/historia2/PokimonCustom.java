@@ -6,6 +6,8 @@ public class PokimonCustom extends javax.swing.JFrame
 {       
     ElecciondePokimon ep = new ElecciondePokimon();
     
+    public static String pokimonName;
+    
     public PokimonCustom() 
     {
         initComponents();
@@ -73,12 +75,17 @@ public class PokimonCustom extends javax.swing.JFrame
             if (pokiname.getText() == null)
             {
                 ep.tu.getPokimon().setNombre(ep.tu.getPokimon().getEspecie());
+                
             }
             else
             {
                 ep.tu.getPokimon().setNombre(pokiname.getText());
+                
             }
             System.out.println(ep.tu.getPokimon().getNombre());
+            
+            pokimonName = ep.tu.getPokimon().getNombre();
+            
             p.show();
             this.dispose();
             

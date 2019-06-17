@@ -1,12 +1,19 @@
 package interfaces.historia3;
 
+import entidades.Pokimon;
+import interfaces.historia1.*;
 import interfaces.historia2.*;
 
 public class Batalla extends javax.swing.JFrame 
 {
     String nuestroTipo = null;
     String rivalImagen = null;
-    
+    String nuestroEspecie = null;
+    int vidaMaximaNuestra = 0;
+    int vidaMaximaRival = 0;
+    int vidaActualNuestra = 0;
+    int vidaActualRival = 0;
+    String miFoto = null;
     
     public Batalla() 
     {
@@ -23,16 +30,16 @@ public class Batalla extends javax.swing.JFrame
         jLabelRivalPokimonNombre = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jRivalHealth = new javax.swing.JProgressBar();
-        jLabel7 = new javax.swing.JLabel();
+        jRivalVidaAct = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jRivalVidaMax = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabelNuestroPokimonNombre = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jOurHealth = new javax.swing.JProgressBar();
-        jLabel4 = new javax.swing.JLabel();
+        jNuestroVidaAct = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jNuestroVidaMax = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -47,19 +54,20 @@ public class Batalla extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelNuestroPokimonImagen.setText("jLabel2");
-        getContentPane().add(jLabelNuestroPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, 190));
+        getContentPane().add(jLabelNuestroPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 230));
 
         jLabelRivalPokimonNombre.setText("Pokimon enemigo");
 
         jLabel3.setText("Lv 5");
 
-        jLabel7.setText("jLabel7");
+        jRivalHealth.setForeground(new java.awt.Color(102, 255, 102));
+        jRivalHealth.setValue(100);
+
+        jRivalVidaAct.setText("jLabel7");
 
         jLabel8.setText("/");
 
-        jLabel9.setText("jLabel9");
+        jRivalVidaMax.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,11 +86,11 @@ public class Batalla extends javax.swing.JFrame
                             .addComponent(jRivalHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jLabel7)
+                        .addComponent(jRivalVidaAct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)))
+                        .addComponent(jRivalVidaMax)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,9 +104,9 @@ public class Batalla extends javax.swing.JFrame
                 .addComponent(jRivalHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(jRivalVidaAct)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(jRivalVidaMax))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -108,11 +116,14 @@ public class Batalla extends javax.swing.JFrame
 
         jLabel2.setText("Lv 5");
 
-        jLabel4.setText("jLabel4");
+        jOurHealth.setForeground(new java.awt.Color(102, 255, 102));
+        jOurHealth.setValue(100);
+
+        jNuestroVidaAct.setText("jLabel4");
 
         jLabel5.setText("/");
 
-        jLabel6.setText("jLabel6");
+        jNuestroVidaMax.setText("jLabel6");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -131,11 +142,11 @@ public class Batalla extends javax.swing.JFrame
                             .addComponent(jOurHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(jLabel4)
+                        .addComponent(jNuestroVidaAct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel6)))
+                        .addComponent(jNuestroVidaMax)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -149,13 +160,13 @@ public class Batalla extends javax.swing.JFrame
                 .addComponent(jOurHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(jNuestroVidaAct)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jNuestroVidaMax))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 290, 130));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 290, 130));
 
         jButton1.setText("Atacar");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 70, 30));
@@ -173,9 +184,7 @@ public class Batalla extends javax.swing.JFrame
             }
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 110, 30));
-
-        jLabelRivalPokimonImagen.setText("jLabel3");
-        getContentPane().add(jLabelRivalPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 230, 190));
+        getContentPane().add(jLabelRivalPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 230, 220));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia3/CAMPODEBATALLA.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -185,8 +194,6 @@ public class Batalla extends javax.swing.JFrame
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 480, 210));
-
-        jLabelEntrenador.setText("jLabel6");
         getContentPane().add(jLabelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 230, 210));
 
         jLabelRival.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia3/Rival.gif"))); // NOI18N
@@ -204,21 +211,40 @@ public class Batalla extends javax.swing.JFrame
         jLabelNuestroPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(ElecciondePokimon.imagen)));
         nuestroTipo = ElecciondePokimon.tipoPokimon;
         System.out.println(nuestroTipo);
+        nuestroEspecie = ElecciondePokimon.especie;
+        
+        Pokimon inicial = new Pokimon(nuestroEspecie, nuestroTipo);
+        vidaMaximaNuestra = inicial.getVidaMax();
+        jNuestroVidaMax.setText("" + vidaMaximaNuestra);
+        vidaMaximaRival = inicial.getVidaMax();
+        jRivalVidaMax.setText("" + vidaMaximaRival);
+        vidaActualNuestra = vidaMaximaNuestra;
+        vidaActualRival = vidaMaximaRival;
+        jNuestroVidaAct.setText("" + vidaActualNuestra);
+        jRivalVidaAct.setText("" + vidaActualRival);
+        
+        miFoto = Presentacion.imagenEntrenador;
+        jLabelEntrenador.setIcon(new javax.swing.ImageIcon(getClass().getResource(miFoto)));
+ 
         if (nuestroTipo == "Fuego")
         {
             rivalImagen = "/imagenes/historia2/AGUA.png";
+            jLabelRivalPokimonNombre.setText("Zquirtle");
         }
         else if (nuestroTipo == "Hierba")
         {
             rivalImagen = "/imagenes/historia2/FUEGO.jpg";
+            jLabelRivalPokimonNombre.setText("Sharmander");
         }
         else if (nuestroTipo == "Agua")
         {
             rivalImagen = "/imagenes/historia2/HIERBA.jpg";
+            jLabelRivalPokimonNombre.setText("Bulbazaur");
         }
         System.out.println(rivalImagen);
         jLabelRivalPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(rivalImagen)));
         
+        jLabelNuestroPokimonNombre.setText(PokimonCustom.pokimonName);
     }
     
     public static void main(String args[]) {
@@ -261,22 +287,22 @@ public class Batalla extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelEntrenador;
     private javax.swing.JLabel jLabelNuestroPokimonImagen;
     private javax.swing.JLabel jLabelNuestroPokimonNombre;
     private javax.swing.JLabel jLabelRival;
     private javax.swing.JLabel jLabelRivalPokimonImagen;
     private javax.swing.JLabel jLabelRivalPokimonNombre;
+    private javax.swing.JLabel jNuestroVidaAct;
+    private javax.swing.JLabel jNuestroVidaMax;
     private javax.swing.JProgressBar jOurHealth;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jRivalHealth;
+    private javax.swing.JLabel jRivalVidaAct;
+    private javax.swing.JLabel jRivalVidaMax;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;

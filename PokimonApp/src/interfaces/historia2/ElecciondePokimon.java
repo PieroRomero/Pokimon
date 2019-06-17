@@ -10,6 +10,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
     private Presentacion vent;
     public static String tipoPokimon = null;
     public static String imagen;
+    public static String especie;
    
     Entrenador tu = new Entrenador();
                   
@@ -216,6 +217,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
         tu.setPokimon(inicial);
         tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
+        especie = inicial.getEspecie();
     }//GEN-LAST:event_ElegirAguaActionPerformed
 
     private void ElegirFuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirFuegoActionPerformed
@@ -223,6 +225,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
         tu.setPokimon(inicial);
         tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
+        especie = inicial.getEspecie();
     }//GEN-LAST:event_ElegirFuegoActionPerformed
 
     private void ElegirHierbaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElegirHierbaActionPerformed
@@ -230,6 +233,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
         tu.setPokimon(inicial);
         tipoPokimon = tu.getPokimon().getTipo();
         System.out.println(tu.getPokimon().getTipo());
+        especie = inicial.getEspecie();
     }//GEN-LAST:event_ElegirHierbaActionPerformed
 
    

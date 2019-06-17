@@ -69,6 +69,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/historia2/Rival_1.gif"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 250, 200));
 
+        jTextField2.setEditable(false);
         jTextField2.setText("Hola yo soy Garu ,espero que sepas jugar bien ¡NOVATO!");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +79,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 290, 30));
         getContentPane().add(jLabelEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 250, 210));
 
+        jTextField3.setEditable(false);
         jTextField3.setText("JAAAA¡ lo mismo digo Garu , yo vengo a demostrar que soy imparable");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +88,7 @@ public class PresentacionDelRival extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 350, 30));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Bien ahora que tienes todo listo , te presentare a tu primer rival\nGaru , ¡Que gane el mejor!");

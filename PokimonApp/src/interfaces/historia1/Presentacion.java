@@ -9,6 +9,7 @@ public class Presentacion extends javax.swing.JFrame {
     Entrenador tu = new Entrenador();
     String sexo = null;
     String nombre = null;
+    public static String imagenEntrenador = null;
     
     public Presentacion() 
     {
@@ -26,10 +27,12 @@ public class Presentacion extends javax.swing.JFrame {
         if (sexo == "man")
         {
             tu.setImagen("/imagenes/historia1/entrenador.png");
+            imagenEntrenador = "/imagenes/historia1/entrenador.png";
         }
         else if (sexo == "woman")
         {
             tu.setImagen("/imagenes/historia1/entrenadora.png");
+            imagenEntrenador = "/imagenes/historia1/entrenadora.png";
 
         }
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource(tu.getImagen())));
