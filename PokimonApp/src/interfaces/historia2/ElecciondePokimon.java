@@ -9,6 +9,7 @@ public class ElecciondePokimon extends javax.swing.JFrame {
        
     private Presentacion vent;
     public static String tipoPokimon = null;
+    public static String imagen;
    
     Entrenador tu = new Entrenador();
                   
@@ -20,7 +21,6 @@ public class ElecciondePokimon extends javax.swing.JFrame {
     
     public void ImagenPokimon(String pok)
     {
-        String imagen = null;
                 
         if (pok == "Agua")
         {

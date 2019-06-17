@@ -1,17 +1,21 @@
 package interfaces.historia3;
 
+import interfaces.historia2.*;
+
 public class Batalla extends javax.swing.JFrame 
 {
 
     public Batalla() 
     {
         initComponents();
+        Cargando();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelNuestroPokimonImagen = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelRivalPokimonNombre = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -30,7 +34,6 @@ public class Batalla extends javax.swing.JFrame
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jLabelNuestroPokimonImagen = new javax.swing.JLabel();
         jLabelRivalPokimonImagen = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -39,7 +42,11 @@ public class Batalla extends javax.swing.JFrame
         jLabelRival = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelNuestroPokimonImagen.setText("jLabel2");
+        getContentPane().add(jLabelNuestroPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, 190));
 
         jLabelRivalPokimonNombre.setText("Pokimon enemigo");
 
@@ -109,24 +116,24 @@ public class Batalla extends javax.swing.JFrame
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelNuestroPokimonNombre)
-                        .addGap(62, 62, 62)
-                        .addComponent(jLabel2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jOurHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelNuestroPokimonNombre)
+                            .addGap(42, 42, 42)
+                            .addComponent(jLabel2))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGap(36, 36, 36)
+                            .addComponent(jOurHealth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)))
                 .addContainerGap(54, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,9 +171,6 @@ public class Batalla extends javax.swing.JFrame
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 110, 30));
 
-        jLabelNuestroPokimonImagen.setText("jLabel2");
-        getContentPane().add(jLabelNuestroPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, 190));
-
         jLabelRivalPokimonImagen.setText("jLabel3");
         getContentPane().add(jLabelRivalPokimonImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 200, 180));
 
@@ -192,9 +196,11 @@ public class Batalla extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public void Cargando()
+    {
+        jLabelNuestroPokimonImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(ElecciondePokimon.imagen)));
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
